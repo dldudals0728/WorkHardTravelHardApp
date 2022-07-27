@@ -96,3 +96,12 @@ Recap
 2. 따라서 community에서 필요한 package를 받아서 사용해야 하는데, 많은 package가 있고, 몇몇은 버그나 업데이트가 없는 package들도 있다.
 3. 이에 Expo에서는 우리가 필요한 package를 만들었고, 좋은 품질의 지원이 가능하다.
 ```
+
+## object assign in #3.3 To Dos
+
+object assign: object를 가져다가 다른 object와 합치고, 새로운 object를 return 해준다.
+
+```
+Object.assign(target, ...sources)
+Object.assign({}, toDos, {[Date.now()]: {work: true}})
+```
