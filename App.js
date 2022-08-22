@@ -21,11 +21,13 @@ export default function App() {
       return;
     }
     const newToDos = Object.assign({}, toDos, {
+      // key값을 []로 감싸주게 되면, key값이 동적으로 적용된다!
       [Date.now()]: { text, work: working },
     });
     setToDos(newToDos);
     setText("");
   };
+  console.log(toDos);
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
