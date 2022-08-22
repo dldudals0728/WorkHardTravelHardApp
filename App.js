@@ -6,6 +6,7 @@ import {
   View,
   TouchableOpacity,
   TextInput,
+  ScrollView,
 } from "react-native";
 import { theme } from "./colors";
 
@@ -20,14 +21,11 @@ export default function App() {
     if (text === "") {
       return;
     }
-    const newToDos = Object.assign({}, toDos, {
-      // key값을 []로 감싸주게 되면, key값이 동적으로 적용된다!
-      [Date.now()]: { text, work: working },
-    });
+    // Object.assign대신, ES6를 이용하여 구현할 수 있다. && "text": text로 하지 않는 이유는, key값과 변수 명이 같기 때문에 자동으로 된다.
+    const newToDos = { ...toDos, [Date.now()]: { text, work: working } };
     setToDos(newToDos);
     setText("");
   };
-  console.log(toDos);
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
@@ -60,6 +58,13 @@ export default function App() {
           style={styles.input}
         />
       </View>
+      <ScrollView>
+        {Object.keys(toDos).map((key) => (
+          <View style={styles.toDo} key={key}>
+            <Text style={styles.toDoText}>{toDos[key].text}</Text>
+          </View>
+        ))}
+      </ScrollView>
     </View>
   );
 }
@@ -86,7 +91,19 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     paddingHorizontal: 20,
     borderRadius: 30,
-    marginTop: 20,
+    marginVertical: 20,
     fontSize: 18,
+  },
+  toDo: {
+    backgroundColor: theme.grey,
+    marginBottom: 10,
+    paddingVertical: 20,
+    paddingHorizontal: 20,
+    borderRadius: 15,
+  },
+  toDoText: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "500",
   },
 });
