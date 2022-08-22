@@ -105,3 +105,7 @@ object assign: object를 가져다가 다른 object와 합치고, 새로운 obje
 Object.assign(target, ...sources)
 Object.assign({}, toDos, {[Date.now()]: {work: true}})
 ```
+
+# 4. Tips
+
+[Sexy Icons](https://icons.expo.fyi/): 아이콘 찾기(Fontisto family good!)
