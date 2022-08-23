@@ -18,7 +18,7 @@ JS는 개발자들이 운영체제를 상대로 메세지를 주고 받기 위�
 
 Expo는 앱 전체를 컴파일하지 않아도, JS코드를 바로 전송시켜 코드를 미리보기 할 수 있도록 도와준다.<br>
 (Java, xcode등이 없어도 됨!)
-[doc.expo.dev](https://docs.expo.dev/)
+[docs.expo.dev](https://docs.expo.dev/)
 
 <pre>
 Requirement
